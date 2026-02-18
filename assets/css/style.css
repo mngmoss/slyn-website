@@ -2,6 +2,7 @@ body {
   font-family: "Pt Serif", Helvetica, Arial, sans-serif;
   background-color: #111111;
   color: #eeeeee;
+  font-weight: 200;
   margin: 0;
   min-height: 100vh;
   cursor:
@@ -59,7 +60,7 @@ main {
 p {
   line-height: 1.4;
   margin-bottom: 1em;
-  font-weight: 100;
+  font-weight: inherit;
   font-size: 16px;
 }
 
@@ -104,6 +105,7 @@ li:has(a):hover a {
 h2 {
   font-size: 1.2rem;
   color: #111111;
+  font-weight: inherit;
   margin-left: 60px;
   margin-top: 10px;
   position: relative;
@@ -115,6 +117,8 @@ h2 {
 h3 {
   font-size: 1.2rem;
   margin-top: 5px;
+
+  font-weight: inherit;
 
   margin-left: 60px;
   position: relative;
@@ -143,6 +147,7 @@ h3 {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   position: relative;
+  font-weight: inherit;
   padding-left: 28px;
 }
 
@@ -161,7 +166,33 @@ h3 {
   align-items: center;
   font-size: 0.9rem;
   letter-spacing: 0.06em;
+  font-weight: inherit;
   z-index: 2;
+}
+
+h1,
+h4,
+h5,
+h6,
+a,
+button,
+[role="button"],
+.project-feature__title,
+.project-feature__eyebrow,
+.project-feature__body,
+.project-feature__date,
+.project-feature__press-label,
+.project-feature__press-item,
+.project-feature__links,
+.project-card figcaption,
+.music-card__eyebrow,
+.music-card__meta,
+.music-card__title,
+.gigs-list,
+.upcoming-list,
+.detail,
+.date {
+  font-weight: inherit;
 }
 
 .site-nav .nav-arc {
