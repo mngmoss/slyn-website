@@ -26,12 +26,13 @@ button,
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
+  overflow-x: hidden;
 }
 
 main {
   padding-top: 60px;
-  padding-bottom: 200px;
-  min-height: 120vh;
+  padding-bottom: 0;
+  min-height: 100vh;
   width: 100%;
   -webkit-mask-image: linear-gradient(
     to bottom,
@@ -46,6 +47,7 @@ main {
   padding-bottom: 0;
   min-height: auto;
   height: calc(100vh - 60px);
+  overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
 }
@@ -61,7 +63,7 @@ p {
   line-height: 1.4;
   margin-bottom: 1em;
   font-weight: inherit;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 ul,
@@ -157,6 +159,7 @@ h3 {
   /* background-color: #ff1111; */
   display: inline-block;
   padding: 2px 0;
+  text-transform: lowercase;
 }
 
 .site-nav {
@@ -187,6 +190,7 @@ button,
 .project-card figcaption,
 .music-card__eyebrow,
 .music-card__meta,
+.music-card__more-info,
 .music-card__title,
 .gigs-list,
 .upcoming-list,
@@ -300,6 +304,18 @@ button,
   margin-top: 20px;
 }
 
+.contact-section h2 {
+  background-color: #111111;
+  color: #eeeeee;
+  margin-bottom: 10px;
+}
+
+.contact-section > .contact-gig-gallery__item {
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-bottom: 16px;
+}
+
 .upcoming-section {
   margin-top: 0;
   margin-left: 0;
@@ -314,6 +330,12 @@ button,
 .upcoming-section h3 {
   margin-left: 0;
   margin-right: 0;
+}
+
+.upcoming-section h2 {
+  background-color: #111111;
+  color: #eeeeee;
+  margin-bottom: 10px;
 }
 
 .contact-links {
@@ -337,6 +359,49 @@ button,
 .contact-links a:visited {
   color: inherit;
   text-decoration: none;
+}
+
+.contact-gig-gallery {
+  margin-left: 60px;
+  margin-right: 60px;
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.contact-gig-gallery__cluster {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.contact-gig-gallery__item {
+  margin: 0;
+}
+
+.contact-gig-gallery__item img {
+  display: block;
+  width: min(410px, 70vw);
+  height: auto;
+  object-fit: cover;
+}
+
+@media (min-width: 769px) {
+  .contact-page {
+    overflow: hidden;
+  }
+
+  .contact-page main {
+    height: calc(100vh - 60px);
+    overflow: hidden;
+  }
+
+  .contact-gig-gallery__cluster {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+  }
 }
 
 .music-stack {
@@ -363,6 +428,167 @@ button,
 .projects-page main {
   position: relative;
   z-index: 1;
+}
+
+.contact-page main {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-backdrop {
+  position: absolute;
+  inset: -6vh -6vw;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-arc {
+  position: absolute;
+  width: 54px;
+  height: 54px;
+  border: 1px dashed rgba(245, 245, 245, 0.7);
+  border-bottom: none;
+  border-left: none;
+  border-radius: 0 54px 0 0;
+  pointer-events: none;
+}
+
+.contact-arc--1 {
+  top: 8%;
+  left: 8%;
+  transform: rotate(-18deg);
+}
+
+.contact-arc--2 {
+  top: 14%;
+  right: 12%;
+  transform: rotate(140deg) scaleY(-1);
+}
+
+.contact-arc--3 {
+  top: 20%;
+  left: 28%;
+  transform: rotate(60deg);
+}
+
+.contact-arc--4 {
+  top: 26%;
+  right: 24%;
+  transform: rotate(-120deg);
+}
+
+.contact-arc--5 {
+  top: 32%;
+  left: 12%;
+  transform: rotate(30deg);
+}
+
+.contact-arc--6 {
+  top: 38%;
+  right: 6%;
+  transform: rotate(160deg);
+}
+
+.contact-arc--7 {
+  top: 44%;
+  left: 22%;
+  transform: rotate(-40deg);
+}
+
+.contact-arc--8 {
+  top: 50%;
+  right: 20%;
+  transform: rotate(200deg);
+}
+
+.contact-arc--9 {
+  top: 56%;
+  left: 38%;
+  transform: rotate(20deg);
+}
+
+.contact-arc--10 {
+  top: 62%;
+  right: 10%;
+  transform: rotate(135deg) scaleY(-1);
+}
+
+.contact-arc--11 {
+  top: 68%;
+  left: 10%;
+  transform: rotate(80deg);
+}
+
+.contact-arc--12 {
+  top: 74%;
+  right: 16%;
+  transform: rotate(-110deg);
+}
+
+.contact-arc--13 {
+  top: 10%;
+  right: 30%;
+  transform: rotate(110deg) scaleY(-1);
+}
+
+.contact-arc--14 {
+  top: 18%;
+  left: 18%;
+  transform: rotate(-35deg);
+}
+
+.contact-arc--15 {
+  top: 24%;
+  right: 4%;
+  transform: rotate(160deg);
+}
+
+.contact-arc--16 {
+  top: 30%;
+  left: 52%;
+  transform: rotate(25deg);
+}
+
+.contact-arc--17 {
+  top: 36%;
+  right: 18%;
+  transform: rotate(-150deg);
+}
+
+.contact-arc--18 {
+  top: 42%;
+  left: 4%;
+  transform: rotate(85deg);
+}
+
+.contact-arc--19 {
+  top: 48%;
+  right: 34%;
+  transform: rotate(10deg);
+}
+
+.contact-arc--20 {
+  top: 60%;
+  left: 30%;
+  transform: rotate(-75deg);
+}
+
+.contact-arc--21 {
+  top: 70%;
+  right: 26%;
+  transform: rotate(145deg) scaleY(-1);
+}
+
+.contact-arc--22 {
+  top: 82%;
+  left: 16%;
+  transform: rotate(40deg);
+}
+
+.contact-arc--23 {
+  top: 90%;
+  right: 8%;
+  transform: rotate(-130deg);
 }
 
 .projects-backdrop {
@@ -690,11 +916,23 @@ button,
   transform: rotate(-1deg);
 }
 .music-card__eyebrow,
-.music-card__meta {
+.music-card__meta,
+.music-card__more-info {
   margin: 0;
   font-size: 0.85rem;
   letter-spacing: 0.02em;
   line-height: 1.1;
+}
+
+.music-card__more-info a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.music-card__more-info a:hover,
+.music-card__more-info a:focus-visible {
+  text-decoration: underline dashed 1px var(--music-underline-color, #ffffff);
+  text-underline-offset: 3px;
 }
 
 .music-card__title {
@@ -1149,6 +1387,10 @@ button,
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
+  html {
+    font-size: 0.9375rem;
+  }
+
   .info-stack {
     margin-left: 40px;
     margin-right: 40px;
@@ -1193,6 +1435,21 @@ button,
   .contact-links {
     margin-left: 40px;
     margin-right: 40px;
+    font-size: 1.15rem;
+  }
+
+  .contact-links p {
+    font-size: 1.15rem;
+  }
+
+  .contact-section > .contact-gig-gallery__item {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .contact-gig-gallery {
+    margin-left: 40px;
+    margin-right: 40px;
   }
 
   h2,
@@ -1216,6 +1473,10 @@ button,
 }
 
 @media (max-width: 768px) {
+  html {
+    font-size: 0.90625rem;
+  }
+
   .gigs-page {
     overflow: hidden;
   }
@@ -1412,6 +1673,35 @@ button,
   .contact-links {
     margin-left: 24px;
     margin-right: 24px;
+    font-size: 1.1rem;
+  }
+
+  .contact-links p {
+    font-size: 1.1rem;
+  }
+
+  .contact-section > .contact-gig-gallery__item {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+
+  .contact-gig-gallery {
+    margin-left: 24px;
+    margin-right: 24px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contact-gig-gallery__cluster {
+    position: static;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-gig-gallery__item img {
+    width: 100%;
+    max-width: 100%;
   }
 
   .gigs-arc {
