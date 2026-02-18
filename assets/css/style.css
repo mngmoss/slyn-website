@@ -935,6 +935,14 @@ button,
   text-underline-offset: 3px;
 }
 
+.project-feature__press-item a,
+.project-feature__press-item a:hover,
+.project-feature__press-item a:focus-visible,
+.project-feature__press-item a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
 .music-card__title {
   margin: 0;
   font-size: 1rem;
